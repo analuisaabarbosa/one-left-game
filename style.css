@@ -1,0 +1,36 @@
+body {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0; 
+}
+
+.container {
+    display: flex;
+    justify-content: center;    
+    align-items: center; 
+    width: 90vw; 
+    height: 90vh; 
+    max-width: 600px; 
+    max-height: 600px; 
+    margin: auto;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); 
+    gap: 1vh;
+    width: 100%;
+    height: 100%;
+}
+.empty, .peg {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box; 
+}
+.peg {
+    background: linear-gradient(to top left, #00c093, #14be0b);
+    border: 0.3vh solid #000;
+    border-radius: 50%;
+}
