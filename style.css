@@ -35,9 +35,11 @@ body {
     background: linear-gradient(to top left, #00c093, #14be0b);
     border: 0.3vh solid #000;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .empty {
     border: 0.3vh solid #000;
     border-radius: 50%;
+    cursor: pointer;
 }

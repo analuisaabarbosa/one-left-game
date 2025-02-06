@@ -13,7 +13,6 @@ let selectedPiece = null;
 
 function renderBoard() {
     gameBoard.innerHTML = ""; 
-    gameBoard.style.gridTemplateColumns = `repeat(${matrix.length}, 1fr)`; 
 
     for (let l = 0; l < matrix.length; l++) {
         for (let c = 0; c < matrix[l].length; c++) {
