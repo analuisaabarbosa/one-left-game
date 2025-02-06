@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    background-color: #e6b800;
+    background-color: #f0c700;
     border-radius: 10%;
     display: flex;
     justify-content: center;    
@@ -33,13 +33,25 @@ body {
 }
 .peg {
     background: linear-gradient(to top left, #00c093, #14be0b);
-    border: 0.3vh solid #000;
     border-radius: 50%;
+    border: 0.2vh solid #000;
     cursor: pointer;
 }
 
 .empty {
-    border: 0.3vh solid #000;
+    background: linear-gradient(to top left, #e6b800, #f0c700);
+    border: 0.2vh solid #000;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.selected {
+    background: linear-gradient(to top left, #14be0b, #008000);
+    border: none;
+}
+
+.valid-move {
+    background: linear-gradient(to top left, #4d99ff, #0000ff);
+    opacity: 0.8;
+    border: none;
 }
