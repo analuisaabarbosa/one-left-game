@@ -17,14 +17,22 @@ function renderBoard() {
     for (let l = 0; l < matrix.length; l++) {
         for (let c = 0; c < matrix[l].length; c++) {
             const cell = document.createElement("div");
+            
+            cell.className = matrix[l][c] === 0 ? 'empty' : 'peg';
+            cell.dataset.row = l;
+            cell.dataset.col = c;
 
             if ((l < 2 || l > 4) && (c < 2 || c > 4)) {
                 cell.style.visibility = "hidden";
             }
 
-            cell.className = matrix[l][c] === 0 ? 'empty' : 'peg';
-            cell.dataset.row = l;
-            cell.dataset.col = c;
+            if (selectedPiece && selectedPiece.row === l && selectedPiece.col === c) {
+                cell.classList.add("selected");
+            }
+
+            if (selectedPiece && matrix[l][c] === 0 && isValidMove(selectedPiece.row, selectedPiece.col, l, c)) {
+                cell.classList.add("valid-move");
+            }
 
             cell.addEventListener("click", handleClick);
 
@@ -45,6 +53,8 @@ function handleClick(event) {
     } else if (matrix[row][col] === 1) {
         selectedPiece = { row, col };
     }
+
+    renderBoard();  
 }
 
 function isValidMove(fromRow, fromCol, toRow, toCol) {
